@@ -14,3 +14,8 @@ s.SoundId ="rbxasset://sounds/workspace/"..id
 end
 return s.SoundId
 end
+
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Nitro's Incognito Functions";
+		Text = "Successfully Loaded!"
+	})
