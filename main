@@ -1,0 +1,16 @@
+local Source = game:HttpGet("https://raw.githubusercontent.com/KadeTheExploiter/IncognitoScripts/main/ScriptSupport.lua")
+loadstring(Source)()
+getgenv().getobjects = function(id)
+local is = game:GetService("InsertService")
+local t = is:LoadLocalAsset(id)
+return t
+end
+getgenv().getcustomasset = function(id)
+local s
+if not game.Players.LocalPlayer:FindFirstChild(tostring(id)) then
+s = Instance.new("Sound",game.Players.LocalPlayer)
+s.Name = tostring(id)
+s.SoundId ="rbxasset://sounds/workspace/"..id
+end
+return s.SoundId
+end
